@@ -19,13 +19,13 @@
 ## Execution Procedure
 
 ```bash
-* $ git clone git@github.com:Ephrem-Tossavi/original_application.git
-* $ cd original_application
-* $ bundle install
-* $ rails db:create
-* $ rails db:migrate
-* $ rails db:seed
-* $ rails s
+ $ git clone git@github.com:Ephrem-Tossavi/original_application.git
+ $ cd original_application
+ $ bundle install
+ $ rails db:create
+ $ rails db:migrate
+ $ rails db:seed
+ $ rails s
 ```
 
 ## Catalog Design
