@@ -10,6 +10,20 @@
 * Comment function
 * Favorite function
 
+#### Gem List
+* gem 'bootsnap'
+* gem 'rails-i18n'
+* gem 'kaminari'
+* gem 'bcrypt'
+* gem 'faker'
+* gem 'carrierwave'
+* gem 'mini_magick'
+* gem 'webdrivers'
+* gem 'rspec-rails', '~> 3.8'
+* gem 'factory_bot_rails'
+* gem 'letter_opener_web'
+* gem 'admin', '~> 0.0.1'
+
 ## Technologies outside the curriculum
 
 * Redcarpet (fonction markdown)
@@ -38,7 +52,7 @@ https://docs.google.com/spreadsheets/d/1ek1AgjU4rtTXzkH6BlSrQWZxpPNHExCpNSMb6NlX
 
 ## ER Diagram
 
-![Diver_ER Diagram_Projet_Comlan Ephrem TOSSAVI](https://user-images.githubusercontent.com/86933926/136866998-13c5694c-f32d-403f-834a-c63085084fa9.png)
+![Diver_ER Diagram_Projet_Comlan Ephrem TOSSAVI](https://user-images.githubusercontent.com/86933926/136940172-d2271648-3b11-4064-856b-db97f6aaa046.png)
 
 https://cacoo.com/diagrams/10bQ5bb0SuGWCuyR/F770C
 
