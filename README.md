@@ -27,7 +27,6 @@
 ## Technologies outside the curriculum
 
 * Redcarpet (fonction markdown)
-* Like function
 * Doc (pdf) uploader
 
 ## Execution Procedure
