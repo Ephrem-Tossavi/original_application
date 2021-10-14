@@ -7,11 +7,14 @@
 
 ## Employmemnt Term Technology
 
+* Devise
 * Comment function
 * Favorite function
 
 #### Gem List
-* gem 'bootsnap'
+* gem 'devise'
+* gem 'rexml'
+* gem 'bootstrap'
 * gem 'rails-i18n'
 * gem 'kaminari'
 * gem 'bcrypt'
@@ -22,7 +25,7 @@
 * gem 'rspec-rails', '~> 3.8'
 * gem 'factory_bot_rails'
 * gem 'letter_opener_web'
-* gem 'admin', '~> 0.0.1'
+* gem 'rails_admin'
 
 ## Technologies outside the curriculum
 
@@ -51,7 +54,7 @@ https://docs.google.com/spreadsheets/d/1ek1AgjU4rtTXzkH6BlSrQWZxpPNHExCpNSMb6NlX
 
 ## ER Diagram
 
-![Diver_ER Diagram_Projet_Comlan Ephrem TOSSAVI](https://user-images.githubusercontent.com/86933926/136994083-27ba2748-934a-470a-aeb2-64dbdfbd201c.png)
+![Diver_ER Diagram_Projet_Comlan Ephrem TOSSAVI](https://user-images.githubusercontent.com/86933926/137290787-41d8accd-9ef3-4b79-a9a0-8a5f339c4879.png)
 
 https://cacoo.com/diagrams/iPhJQLtK5Hj1O31u/A0EEA
 
