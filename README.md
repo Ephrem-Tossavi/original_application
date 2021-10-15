@@ -25,7 +25,8 @@
 * gem 'rspec-rails', '~> 3.8'
 * gem 'factory_bot_rails'
 * gem 'letter_opener_web'
-* gem 'rails_admin'
+* gem 'rails_admin', '~> 2.0'
+* gem 'cancancan'
 
 ## Technologies outside the curriculum
 
@@ -54,7 +55,7 @@ https://docs.google.com/spreadsheets/d/1ek1AgjU4rtTXzkH6BlSrQWZxpPNHExCpNSMb6NlX
 
 ## ER Diagram
 
-![Diver_ER Diagram_Projet_Comlan Ephrem TOSSAVI](https://user-images.githubusercontent.com/86933926/137290787-41d8accd-9ef3-4b79-a9a0-8a5f339c4879.png)
+![Diver_ER Diagram_Projet_Comlan Ephrem TOSSAVI](https://user-images.githubusercontent.com/86933926/137480379-4ff948ac-56d7-49a5-8126-14778661069c.png)
 
 https://cacoo.com/diagrams/iPhJQLtK5Hj1O31u/A0EEA
 
