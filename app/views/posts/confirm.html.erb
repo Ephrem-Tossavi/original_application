@@ -1,0 +1,20 @@
+<h3>Envoyer avec le Contenu suivant</h3>
+<%= form_with(model: @post, local: true) do |form| %>
+  <%= form.hidden_field :name %>
+  <%= form.hidden_field :content %>
+  <p>Titre:<%= @post.name %></p>
+  <p>Contenu:<%= @post.content %></p>
+
+  <%if @post.attachment && @post.attachment.url%>
+  <iframe src="<%= @post.attachment.url %>", toolbar=0" width="100%" height="400px"> </iframe>
+  <%= form.hidden_field :attachment_cache %>
+  <%= form.submit "Post" %>
+  <% end %>
+
+  <%= form_with(model: @post, url: new_post_path, local: true, method:"get") do |form| %>
+  <%= form.hidden_field :attachment_cache %>
+  <%= form.submit "return", name: "back", class: "bnt bnt-danger"%>
+<% end %>
+<% end %>
+
+
