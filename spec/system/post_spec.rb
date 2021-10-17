@@ -1,8 +1,20 @@
 require 'rails_helper'
 RSpec.describe 'Fonction de gestion des posts', type: :system do
     before do
-      FactoryBot.create(:post)
-      FactoryBot.create(:second_post)
+    
+    user = create :user
+
+    visit new_user_session_path
+
+    fill_in 'Email', with: user.email
+    fill_in 'Password', with: user.password
+    click_button 'Log in'
+
+    FactoryBot.create(:post)
+    FactoryBot.create(:second_post)
+
+    FactoryBot.create(:tag)
+    FactoryBot.create(:tagging)
     end
   describe 'Nouvelle fonction de création' do
     context "Lors de la création d'un nouveau post" do
@@ -47,4 +59,14 @@ RSpec.describe 'Fonction de gestion des posts', type: :system do
       end
     end
   end
+  describe "Fonction Tag" do
+    context "rechercher par tag" do
+        it "Retourner une liste avec recherche d'étiquette " do
+          visit posts_path
+          select "Biologie", from: "search_tag"
+          click_on "search"
+          expect(page).to have_content 'Biologie' 
+        end
+    end
+  end 
 end
