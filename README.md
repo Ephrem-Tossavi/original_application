@@ -27,6 +27,7 @@
 * gem 'letter_opener_web'
 * gem 'rails_admin', '~> 2.0'
 * gem 'cancancan'
+* gem 'devise-specs'
 
 ## Technologies outside the curriculum
 

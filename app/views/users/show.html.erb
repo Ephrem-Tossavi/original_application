@@ -1,0 +1,17 @@
+<p>
+  <strong>Name:</strong>
+  <%= @user.name %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @user.email %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @user.status %>
+</p>
+
+<%= link_to 'Edit', edit_user_registration_path(current_user), class: "btn btn-warning" %> | 
+<%= link_to 'Back', posts_path , class: "btn btn-danger"%>

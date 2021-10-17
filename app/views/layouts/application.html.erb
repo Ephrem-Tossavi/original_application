@@ -10,7 +10,17 @@
   </head>
 
   <body>
-  <div class = "container" style = "padding-top:20px;">
-    <%= yield %>
+  <%= render 'posts/header'%>
+
+  <div>
+  <% if notice %>
+  <p class="alert alert-notice"><%= notice %></p>
+  <% end %>
+  <% if alert %>
+  <p class="alert alert-error"><%= alert %></p>
+  <% end %>  
+  </div>
+  
+  <%= yield %>
   </body>
 </html>
