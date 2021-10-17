@@ -25,8 +25,19 @@
   <div class="field">
   <%= form.label :attachment %>
   <%= form.file_field :attachment %>
-
  </div>
+
+ <h5>Tags</h5>
+  <div class="row">
+      <% @tags.each do |tag| %>
+      <div class="col m-3 col-lg-2">
+          <p>
+          <%= form.check_box :tag_ids, { multiple: true, checked: @post.tags.find_by(id: tag.id).present?,  disabled: tag[:disabled], include_hidden: false }, tag[:id] %>
+          <%=form.label :tag_ids, tag.name,value:tag[:id],style:'text-decoration:none'%>
+          </p>
+      </div>
+     <% end %>
+  </div>
 
   <div class="actions">
     <%= form.submit %>

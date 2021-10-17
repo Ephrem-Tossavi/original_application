@@ -7,6 +7,7 @@ class PostsController < ApplicationController
   def index
     @posts = Post.all
     @posts = Post.all.order("created_at desc")
+    @tags = Tag.where(user_id: nil).or(Tag.where(user_id: current_user.id))
   end
 
   # GET /posts/1 or /posts/1.json
@@ -16,10 +17,12 @@ class PostsController < ApplicationController
   # GET /posts/new
   def new
     @post = Post.new
+    @tags = Tag.all
   end
 
   # GET /posts/1/edit
   def edit
+    @tags = Tag.all
   end
 
   # POST /posts or /posts.json
@@ -57,13 +60,22 @@ class PostsController < ApplicationController
     end
   end
 
-  def search 
+  def search
+    @tags = Tag.where(user_id: nil).or(Tag.where(user_id: current_user.id))
     session[:search] = {'name' => params[:search_title]}
+
     if params[:search_title].present?
+      if params[:search_tag].present?
+      @posts = Post.all.title_search(params[:search_title].tag_search(params[:search_tag]))
+      else
       @posts = Post.all.title_search(params[:search_title])
-    else
+      end 
+      elsif params[:search_tag].present?
+      @posts = Post.all.tag_search(params[:search_tag])
+      #@posts = current_user.posts.tag_search(params[:search_tag])
+      else
       @posts = Post.all
-    end
+      end
     render :index
   end
 
@@ -84,6 +96,6 @@ class PostsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def post_params
-      params.require(:post).permit(:name, :content, :attachment, :attachment_cache)
+      params.require(:post).permit(:name, :content, :attachment, :attachment_cache, tag_ids: [])
     end
 end

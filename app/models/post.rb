@@ -2,8 +2,17 @@ class Post < ApplicationRecord
    mount_uploader :attachment, AttachmentUploader
    validates :name, presence: true
 
-   belongs_to :user
+   belongs_to :user, optional: true
+   has_many :taggings, dependent: :destroy
+   has_many :tags, through: :taggings, source: :tag
+   
 
    scope  :order_by_created_at, ->  {order(created_at: :desc)}
    scope  :title_search, -> (search_key){where("name LIKE ?","%#{search_key}%")}
+
+   scope :tag_search, -> (search_tag){
+        posts = Tagging.where(tag_id: search_tag)
+        ids = posts.map{ |post| post.post_id } 
+        where(id: ids)
+    }
 end
