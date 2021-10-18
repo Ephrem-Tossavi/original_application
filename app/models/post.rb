@@ -5,6 +5,8 @@ class Post < ApplicationRecord
    belongs_to :user, optional: true
    has_many :taggings, dependent: :destroy
    has_many :tags, through: :taggings, source: :tag
+   has_many :favorites, dependent: :destroy
+   has_many :favorite_users, through: :favorites, source: :user
    
 
    scope  :order_by_created_at, ->  {order(created_at: :desc)}

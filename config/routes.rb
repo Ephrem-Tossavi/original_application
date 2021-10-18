@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :favorites
   resources :tags
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
 
