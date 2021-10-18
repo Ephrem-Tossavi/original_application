@@ -9,6 +9,7 @@ class User < ApplicationRecord
   scope  :title_search, -> (search_key){where("name LIKE ?","%#{search_key}%")}
 
   has_many :posts
+  has_many :favorites, dependent: :destroy
 
 
          enum status: {

@@ -7,11 +7,12 @@ class PostsController < ApplicationController
   def index
     @posts = Post.all
     @posts = Post.all.order("created_at desc")
-    @tags = Tag.where(user_id: nil).or(Tag.where(user_id: current_user.id))
+    @tags = Tag.where(user_id: nil) || (Tag.where(user_id: current_user.id))
   end
 
   # GET /posts/1 or /posts/1.json
   def show
+    @favorite = current_user.favorites.find_by(post_id: @post.id)
   end
 
   # GET /posts/new

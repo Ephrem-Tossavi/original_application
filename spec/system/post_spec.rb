@@ -10,11 +10,16 @@ RSpec.describe 'Fonction de gestion des posts', type: :system do
     fill_in 'Password', with: user.password
     click_button 'Log in'
 
-    FactoryBot.create(:post)
-    FactoryBot.create(:second_post)
+    user= User.last
+
+    post = FactoryBot.create(:post, name: 'Diver', content: 'Liste des diplômés', attachment: 'Document', user_id: user.id)
+
+    #FactoryBot.create(:post)
+    #FactoryBot.create(:second_post)
 
     FactoryBot.create(:tag)
     FactoryBot.create(:tagging)
+    #FactoryBot.create(:favorite)
     end
   describe 'Nouvelle fonction de création' do
     context "Lors de la création d'un nouveau post" do
@@ -28,7 +33,7 @@ RSpec.describe 'Fonction de gestion des posts', type: :system do
   describe "Fonction d'affichage de liste" do
     context "Lors de la transition vers l'écran de liste" do
       it "Une liste des posts créées s'affiche" do
-        post = FactoryBot.create(:post, name: 'Diver', content: 'Liste des diplômés', attachment: 'Document')
+        #post = FactoryBot.create(:post, name: 'Diver', content: 'Liste des diplômés', attachment: 'Document')
         visit posts_path
         expect(page).to have_content 'Diver'
       end
@@ -39,8 +44,8 @@ RSpec.describe 'Fonction de gestion des posts', type: :system do
         visit posts_path
         @post_list = all(".post_row")
         
-        expect(@post_list[0]).to have_content 'titre2_factory'
-        expect(@post_list[-1]).to have_content 'titre1_factory'
+        expect(@post_list[0]).to have_content 'Diver'
+        #expect(@post_list[-1]).to have_content 'titre1_factory'
       end
     end
   end
@@ -54,8 +59,8 @@ RSpec.describe 'Fonction de gestion des posts', type: :system do
     context "Si vous effectuez une recherche par Title" do
       it "Filtrer par publication qui incluent des mots-clés de recherche" do
         visit posts_path
-        fill_in 'search_title', with: 'titre1_factory'
-        expect(page).to have_content 'titre1_factory'
+        fill_in 'search_title', with: 'Diver'
+        expect(page).to have_content 'Diver'
       end
     end
   end
@@ -68,5 +73,16 @@ RSpec.describe 'Fonction de gestion des posts', type: :system do
           expect(page).to have_content 'Biologie' 
         end
     end
-  end 
+  end
+  describe "Fonction Favorite" do
+    context "Choisir un post comme favoris" do
+      it "Ne peut mettre sa propre publication comme favoris" do
+        visit posts_path
+        click_on "Show"
+        expect(page).to have_no_content 'Favorite'
+        
+      end 
+    end 
+  end   
 end
+
