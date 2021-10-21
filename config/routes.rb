@@ -10,6 +10,8 @@ Rails.application.routes.draw do
 
   resources :users, only: [:show, :edit, :index]
 
+  get '/guess/:type', to: "guest_users#login", as: "guess_user"
+
   #root "posts#index"
 
   get '/search', to: "posts#search", as: "search_posts"

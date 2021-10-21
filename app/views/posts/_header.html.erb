@@ -17,6 +17,8 @@
             <% else %>
             <%= link_to 'Log in', new_user_session_path, class: "btn btn-success text-light"%>
             <%= link_to 'sign up', new_user_registration_path, class: "btn btn-primary text-light" %>
+            <%= link_to 'Admin guest', guess_user_path(1), class: "btn btn-default text-light" %>
+            <%= link_to 'General user guest', guess_user_path(0), class: "btn btn-default text-light" %>
             </div>
             <% end %>
         </div>
