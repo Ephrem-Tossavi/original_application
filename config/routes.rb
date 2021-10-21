@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  root 'homes#index'
+  #get 'comments/create'
   resources :favorites
   resources :tags
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
@@ -8,12 +10,13 @@ Rails.application.routes.draw do
 
   resources :users, only: [:show, :edit, :index]
 
-  root "posts#index"
+  #root "posts#index"
 
   get '/search', to: "posts#search", as: "search_posts"
   get '/search_users', to: "users#search", as: "search_users"
 
   resources :posts do
+    resources :comments
     collection do
       post :confirm
     end

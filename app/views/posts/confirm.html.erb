@@ -8,9 +8,8 @@
   <%if @post.attachment && @post.attachment.url%>
   <iframe src="<%= @post.attachment.url %>", toolbar=0" width="100%" height="400px"> </iframe>
   <%= form.hidden_field :attachment_cache %>
-  <%= form.submit "Post" %>
   <% end %>
-
+  <%= form.submit "Post" %>
   <%= form_with(model: @post, url: new_post_path, local: true, method:"get") do |form| %>
   <%= form.hidden_field :attachment_cache %>
   <%= form.submit "return", name: "back", class: "bnt bnt-danger"%>

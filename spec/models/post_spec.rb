@@ -28,8 +28,6 @@ RSpec.describe Post, type: :model do
         user = create :user
         user= User.last
         @post = FactoryBot.create(:post, name: 'Diver', content: 'Liste des diplômés', attachment: 'Document', user_id: user.id)
-        #post1 = FactoryBot.create(:post, name: 'Diver1', content: 'Liste des admissibles', attachment: 'Document1', user_id: user.id)
-        #post2 = FactoryBot.create(:second_post, name: 'Diver2', content: 'Liste des refusés', attachment: 'Document2', user_id: user.id)
       end
       it 'Rechercher par le titre de la publication' do
         expect(Post.title_search('Diver')).to include(@post)

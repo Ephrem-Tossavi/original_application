@@ -8,7 +8,7 @@
 ## Employmemnt Term Technology
 
 * Devise
-* Comment function
+* Comment function using Ajax
 * Favorite function
 
 #### Gem List
@@ -28,6 +28,7 @@
 * gem 'rails_admin', '~> 2.0'
 * gem 'cancancan'
 * gem 'devise-specs'
+* gem 'redcarpet'
 
 ## Technologies outside the curriculum
 

@@ -13,12 +13,13 @@
 
   <div class="field">
     <%= form.label :name %>
-    <%= form.text_field :name %>
+    <%= form.text_field :name, class: "input" %>
   </div>
+  <br>
 
   <div class="field">
     <%= form.label :content %>
-    <%= form.text_field :content %>
+    <%= form.text_area :content, class: "input h-64"%>
   </div>
 
 
