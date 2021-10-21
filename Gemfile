@@ -15,6 +15,12 @@ gem 'jbuilder', '~> 2.5'
 
 gem 'carrierwave'
 gem 'bootstrap-sass'
+gem 'rexml'
+gem 'devise'
+gem 'rails_admin', '~> 2.0'
+gem 'cancancan'
+gem 'redcarpet'
+gem 'faker'
 
 
 
@@ -25,13 +31,13 @@ group :development, :test do
 
   gem 'rspec-rails', '~> 3.8'
   gem 'factory_bot_rails'
-  gem 'rexml'
-  gem 'devise'
-  gem 'rails_admin', '~> 2.0'
-  gem 'cancancan'
-  gem 'devise-specs'
-  gem 'redcarpet'
-  gem 'faker' 
+  #gem 'rexml'
+  #gem 'devise'
+  #gem 'rails_admin', '~> 2.0'
+  #gem 'cancancan'
+  #gem 'devise-specs'
+  #gem 'redcarpet'
+  #gem 'faker' 
 
 end
 
@@ -41,6 +47,7 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'letter_opener_web'
+  gem 'devise-specs'
 end
 
 group :test do

@@ -2,6 +2,8 @@ require_relative 'boot'
 
 require 'rails/all'
 
+#require "devise"
+
 Bundler.require(*Rails.groups)
 
 module OriginalApplication
