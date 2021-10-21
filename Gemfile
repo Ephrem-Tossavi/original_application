@@ -30,6 +30,8 @@ group :development, :test do
   gem 'rails_admin', '~> 2.0'
   gem 'cancancan'
   gem 'devise-specs'
+  gem 'redcarpet'
+  gem 'faker' 
 
 end
 

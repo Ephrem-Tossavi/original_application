@@ -83,6 +83,6 @@ RSpec.describe 'Fonction de gestion des posts', type: :system do
         
       end 
     end 
-  end   
+  end  
 end
 
