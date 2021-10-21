@@ -31,13 +31,6 @@ group :development, :test do
 
   gem 'rspec-rails', '~> 3.8'
   gem 'factory_bot_rails'
-  #gem 'rexml'
-  #gem 'devise'
-  #gem 'rails_admin', '~> 2.0'
-  #gem 'cancancan'
-  #gem 'devise-specs'
-  #gem 'redcarpet'
-  #gem 'faker' 
 
 end
 
