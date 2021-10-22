@@ -6,9 +6,11 @@
             <% if user_signed_in? %>
 
             <div class="col-md-4">
+            <%if current_user.admin==true %>
+            <%= link_to "Admin Screen", "/admin", class: "btn btn-success text-light" %>
+            <% end %>
             <%= link_to "Posts List", posts_path, class: "btn btn-info text-light"%>
             <%= link_to "User List", users_path , class: "btn btn-primary text-light"%>
-            <%= link_to "Admin Screen", "/admin", class: "btn btn-success text-light" %>
             <%= link_to "Profile", user_path(current_user.id) , class: "btn btn-primary text-light"%>
             </div>
 

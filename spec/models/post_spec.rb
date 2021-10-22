@@ -4,7 +4,7 @@ RSpec.describe Post, type: :model do
     describe 'Fonction de modèle des posts' do
       context 'Si le nom de la publication est vide' do
         it 'Rester bloqué dans la validation' do
-          post = post.new(name: '', content: "Test d'échec")
+          post = Post.new(name: nil)
           expect(post).not_to be_valid
         end
       end
