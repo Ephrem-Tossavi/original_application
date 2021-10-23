@@ -20,6 +20,7 @@ RSpec.feature 'User resets a password' do
     click_button 'Send me reset password instructions'
 
     expect(page).to have_text 'Email not found'
+    #expect(page).to have_text 'Email n’a pas été trouvé(e)'
   end
 
   #scenario 'user changes password' do
@@ -43,5 +44,6 @@ RSpec.feature 'User resets a password' do
     click_button 'Change my password'
 
     expect(page).to have_text 'Reset password token is invalid'
+    #expect(page).to have_text "Clé de réinitialisation du mot de passe n'est pas valide"
   end
 end

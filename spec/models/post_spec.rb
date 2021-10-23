@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Post, type: :model do
     describe 'Fonction de modèle des posts' do
-      context 'Si le nom de la publication est vide' do
+      context 'Si le nom du post est vide' do
         it 'Rester bloqué dans la validation' do
           post = Post.new(name: nil)
           expect(post).not_to be_valid
@@ -10,16 +10,18 @@ RSpec.describe Post, type: :model do
       end
     end
     describe 'Fonction de validation des posts vides' do
-      context 'Si les contenu de la publication sont vides' do
-        it 'Validation interceptée' do
-          # Décrivez le contenu ici
+      context "Lorsque l'utilisateur tente de créer un post dont le nom est vide" do
+        it 'Revoyer le message: Name doit être rempli(e)' do
+          post = Post.new(name: nil)
+          expect(post).not_to be_valid
         end
       end
     end
     describe 'Fonction de validation des posts décrites' do
-      context 'Si le nom et le contenu de la publication sont décrits' do
+      context 'Si le nom du post est décrit' do
         it 'Validation réussie' do
-          # Décrivez le contenu ici
+          post = Post.new(name: "Diver Projet original")
+          expect(post).to be_valid
         end
       end
     end

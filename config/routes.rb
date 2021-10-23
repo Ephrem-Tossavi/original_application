@@ -19,9 +19,9 @@ Rails.application.routes.draw do
 
   resources :posts do
     resources :comments
-    collection do
-      post :confirm
-    end
+    #collection do
+    #  post :confirm
+    #end
   end
   
   if Rails.env.development?

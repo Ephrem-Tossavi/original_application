@@ -1,44 +1,67 @@
- <%= form_with(model: @post, local: true, url: choose_new_or_edit ) do |form| %>
+<%= form_with(model: @post, local: true) do |form| %>
+ 
   <% if post.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
-
-      <ul>
-      <% post.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
+  <% name = post.errors.include?(:name) %>
+    <% content = post.errors.include?(:content) %>
+    <% attachment = post.errors.include?(:attachment) %>
+    
   <% end %>
 
   <div class="field">
     <%= form.label :name %>
     <%= form.text_field :name, class: "input" %>
   </div>
+  <% if name %>
+        <div class="d-block" style="color:red;font-size:12px">
+          <% post.errors.full_messages_for(:name).each do |error_message| %>
+            <%= error_message %>.
+          <% end %>
+        </div>
+      <% end %>
   <br>
 
   <div class="field">
     <%= form.label :content %>
     <%= form.text_area :content, class: "input h-64"%>
   </div>
+  <% if content %>
+        <div class="d-block" style="color:red;font-size:12px">
+          <% post.errors.full_messages_for(:content).each do |error_message| %>
+            <%= error_message %>.
+          <% end %>
+          <% end %>
 
 
   <div class="field">
   <%= form.label :attachment %>
   <%= form.file_field :attachment %>
  </div>
+ <% if attachment %>
+        <div class="d-block" style="color:red;font-size:12px">
+          <% post.errors.full_messages_for(:attachment).each do |error_message| %>
+            <%= error_message %>.
+          <% end %>
+          <% end %>
 
  <h5>Tags</h5>
-  <div class="row">
-      <% @tags.each do |tag| %>
-      <div class="col m-3 col-lg-2">
-          <p>
-          <%= form.check_box :tag_ids, { multiple: true, checked: @post.tags.find_by(id: tag.id).present?,  disabled: tag[:disabled], include_hidden: false }, tag[:id] %>
-          <%=form.label :tag_ids, tag.name,value:tag[:id],style:'text-decoration:none'%>
-          </p>
-      </div>
-     <% end %>
-  </div>
+
+  <table style="width:100%">
+  
+    <thead>
+    <tr>
+    <th></th>
+    <th></th>
+    </tr>
+    </thead>
+  <tbody>
+  <% @tags.each do |tag| %>
+  <tr>
+  <td><%=form.label :tag_ids, tag.name,value:tag[:id],style:'text-decoration:none'%></td>  
+  <td><%= form.check_box :tag_ids, { multiple: true, checked: @post.tags.find_by(id: tag.id).present?,  disabled: tag[:disabled], include_hidden: false }, tag[:id] %></td>
+  </tr>
+  <% end %>
+  </tbody>
+</table>
 
   <div class="actions">
     <%= form.submit %>

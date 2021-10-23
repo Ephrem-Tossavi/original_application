@@ -48,7 +48,7 @@ RSpec.describe 'Fonction de gestion des Commentaires', type: :system do
         click_on "Create Comment"
         sleep 2
         click_on "Edit comment"
-        expect(page).to have_content 'Editing comment'
+        expect(page).to have_content 'Commentaire du post'
        end
      end
     context "Lors de la suppression d'un commentaire" do

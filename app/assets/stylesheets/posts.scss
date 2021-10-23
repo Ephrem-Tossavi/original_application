@@ -25,6 +25,7 @@ html {
       height: 12.2%;
       margin: 0;
       font-family: tahoma;
+      position: relative;
     }
 
 .navbar{
@@ -62,3 +63,14 @@ ol{
   text-align: center;
   font-family: fantasy;
 }
+
+ footer {
+    width: 340%;
+    min-height: 12vh;
+    background-color: ghostwhite;
+    padding: 10px;
+    color: blue;
+    font-size: 15px;
+    position: relative;
+    text-align: center;
+  }

@@ -20,7 +20,7 @@
       <% if defined? @search_title %>
       <%= f.text_field :search_title, value: @search_title ,class:'tag mx-3',style:'height:50px;width:200px'%>
       <% else %>
-        <%= f.text_field :search_title %>
+        <%= f.text_field :search_title, placeholder: "Search by post name"%>
       <% end %>
       <%= f.select :search_tag, @tags.collect { |p| [p.name, p.id]}, class: "search_tag", prompt: 'Tag' %>
       <%= f.submit 'search' ,class:'btn btn-light'%>
@@ -77,3 +77,4 @@
 </table>
 
 <br>
+<%= render 'posts/footer'%>

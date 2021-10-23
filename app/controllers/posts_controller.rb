@@ -24,6 +24,7 @@ class PostsController < ApplicationController
   end
 
   def create
+    @tags = Tag.all
     @post = current_user.posts.build(post_params)
     #@post = Post.new(post_params)
 
@@ -38,11 +39,11 @@ class PostsController < ApplicationController
     end
   end
 
-  def confirm
-    @post = current_user.posts.build(post_params)
-    #@post = Post.new(post_params)
-    render :new if @post.invalid?
-  end
+  #def confirm
+  #  @tags = Tag.all
+  #  @post = current_user.posts.build(post_params)
+  #  render :new if @post.invalid?
+  #end
 
   def update
     respond_to do |format|
