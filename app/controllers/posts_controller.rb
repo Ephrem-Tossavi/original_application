@@ -20,6 +20,9 @@ class PostsController < ApplicationController
   end
 
   def edit
+    unless @post.user.id==current_user.id
+      return redirect_to posts_path, notice: "Vous n'êtes pas autorisé à mettre à jour."
+    end
     @tags = Tag.all
   end
 
@@ -77,6 +80,9 @@ class PostsController < ApplicationController
   end
 
   def destroy
+    unless @post.user.id==current_user.id
+      return redirect_to posts_path, notice: "Vous n'êtes pas autorisé à mettre à jour."
+    end
     @post.destroy
     respond_to do |format|
       format.html { redirect_to posts_url, notice: "Post was successfully destroyed." }
