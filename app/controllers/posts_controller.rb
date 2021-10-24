@@ -81,7 +81,7 @@ class PostsController < ApplicationController
 
   def destroy
     unless @post.user.id==current_user.id
-      return redirect_to posts_path, notice: "Vous n'êtes pas autorisé à mettre à jour."
+      return redirect_to posts_path, notice: "Vous n'êtes pas autorisé à supprimer."
     end
     @post.destroy
     respond_to do |format|
