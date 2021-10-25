@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Favorites</h1>
+<h1><%=I18n.t('views.buttons.Favorite')%></h1>
 
 <% @favorites.each do |post| %>
 
@@ -26,12 +26,12 @@
 </p>
 
 <p>
-  <strong>Registered Date:</strong>
+  <strong><%=I18n.t('views.messages.Registered Date')%>:</strong>
   <%= post.post.created_at %>
 </p>
 
 <p>
-  <strong>Registered by:</strong>
+  <strong><%=I18n.t('views.messages.Registered By')%>:</strong>
   <%= post.post.user.name %>
 </p>
 
@@ -42,16 +42,16 @@
   </div>
 </div>
 
-<%= link_to 'Back', posts_path, class: "btn btn-danger text-light" %>
+<%= link_to I18n.t('views.buttons.Back'), posts_path, class: "btn btn-danger text-light" %>
 
 <%if post.post.user==current_user %>
 
   
-    <%= link_to 'Edit',
+    <%= link_to I18n.t('views.buttons.Edit'),
    edit_post_path(post), class: "btn btn-warning text-dark" %>
   
  
-   <%= link_to 'Delete', post, method: :delete, data: { confirm: 'Are you
+   <%= link_to I18n.t('views.buttons.Delete'), post, method: :delete, data: { confirm: 'Are you
    sure?' }, class: "btn btn-danger text-light" %>
  
  <% else %>
