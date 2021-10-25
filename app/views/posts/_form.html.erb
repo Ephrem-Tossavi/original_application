@@ -8,7 +8,7 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :name %>
+    <%= form.label :Nom %>
     <%= form.text_field :name, class: "input" %>
   </div>
   <% if name %>
@@ -21,7 +21,7 @@
   <br>
 
   <div class="field">
-    <%= form.label :content %>
+    <%= form.label :Contenu %>
     <%= form.text_area :content, class: "input h-64"%>
   </div>
   <% if content %>
@@ -43,7 +43,7 @@
           <% end %>
           <% end %>
 
- <h5>Tags</h5>
+ <h3><%=I18n.t('views.messages.Tags')%></h3>
 
   <table style="width:100%">
   

@@ -10,7 +10,7 @@
     <% else %>
       <%= f.text_field :search_title %>
       <%= f.select :search_status, User.statuses.map { |k, v| [k, v] }, class: 'search_status form-control', prompt: 'status'%>
-      <%= f.submit 'search' ,class:'btn btn-light'%>
+      <%= f.submit I18n.t('views.form.search') ,class:'btn btn-light'%>
     <% end %>
     <% end %>
   </div>
@@ -20,19 +20,19 @@
 <br>
 <br>
 
-<h1>Users List</h1> 
+<h1><%=I18n.t('views.messages.Users List')%></h1> 
 
 <br>
 
 <table class = "table table-bordered table-striped">
 <thead>
   <tr>
-    <th>Name</th>
-    <th>Adress Email</th>
+    <th><%=I18n.t('views.messages.Name')%></th>
+    <th><%=I18n.t('views.messages.Adress Email')%></th>
     <th>Status</th>
-    <th>Registered Date</th>
-    <th>Post Count</th>
-    <th>Favorite Count</th>
+    <th><%=I18n.t('views.messages.Registered Date')%></th>
+    <th><%=I18n.t('views.messages.Post Count')%></th>
+    <th><%=I18n.t('views.messages.Favorite Count')%></th>
     <th colspan="3"></th>
   </tr>
 </thead>
@@ -47,7 +47,7 @@
       <td><%= user.posts.count %></td>
       <td><%= user.favorites.count %></td>
       <%if user==current_user %>
-      <td><%= link_to 'Show', user, class:"btn btn-primary" %></td>
+      <td><%= link_to I18n.t('views.buttons.Show'), user, class:"btn btn-primary" %></td>
       <% else %>
         <p></p>
         <% end %>
@@ -56,6 +56,6 @@
 </tbody>
 </table>
 
-<%= link_to "Back", posts_path, class: "btn btn-danger text-light"%>
+<%= link_to I18n.t('views.buttons.Back'), posts_path, class: "btn btn-danger text-light"%>
 
 <%= render 'posts/footer'%>

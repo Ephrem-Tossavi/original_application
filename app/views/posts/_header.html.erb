@@ -7,20 +7,20 @@
 
             <div class="col-md-4">
             <%if current_user.admin==true %>
-            <%= link_to "Admin Screen", "/admin", class: "btn btn-success text-light" %>
+            <%= link_to I18n.t('views.messages.Admin Screen'), "/admin", class: "btn btn-success text-light" %>
             <% end %>
-            <%= link_to "Posts List", posts_path, class: "btn btn-info text-light"%>
-            <%= link_to "User List", users_path , class: "btn btn-primary text-light"%>
-            <%= link_to "Profile", user_path(current_user.id) , class: "btn btn-primary text-light"%>
+            <%= link_to I18n.t('views.messages.Posts List'), posts_path, class: "btn btn-info text-light"%>
+            <%= link_to I18n.t('views.messages.Users List'), users_path , class: "btn btn-primary text-light"%>
+            <%= link_to I18n.t('views.messages.Profile'), user_path(current_user.id) , class: "btn btn-primary text-light"%>
             </div>
 
             <div class="col-md-2">
-            <%= link_to 'Sign Out', destroy_user_session_path, method: :delete, class: "btn btn-danger text-light"%>
+            <%= link_to I18n.t('views.messages.Sign Out'), destroy_user_session_path, method: :delete, class: "btn btn-danger text-light"%>
             <% else %>
-            <%= link_to 'Log in', new_user_session_path, class: "btn btn-success text-light"%>
-            <%= link_to 'sign up', new_user_registration_path, class: "btn btn-primary text-light" %>
-            <%= link_to 'Admin guest', guess_user_path(1), class: "btn btn-default text-light" %>
-            <%= link_to 'General user guest', guess_user_path(0), class: "btn btn-default text-light" %>
+            <%= link_to I18n.t('views.messages.Log in'), new_user_session_path, class: "btn btn-success text-light"%>
+            <%= link_to I18n.t('views.messages.Sign up'), new_user_registration_path, class: "btn btn-primary text-light" %>
+            <%= link_to I18n.t('views.messages.Guest Admin'), guess_user_path(1), class: "btn btn-default text-light" %>
+            <%= link_to I18n.t('views.messages.Guest User'), guess_user_path(0), class: "btn btn-default text-light" %>
             </div>
             <% end %>
         </div>

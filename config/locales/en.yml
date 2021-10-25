@@ -243,3 +243,75 @@ en:
       long: "%B %d, %Y %H:%M"
       short: "%d %b %H:%M"
     pm: pm
+
+  views:
+    messages:
+       Profile: Profile
+       home: home
+       Sign in: Sign in
+       Sign up: Sign up
+       Sign Out: Sign Out
+       Log in: Log in
+       Admin Screen: Admin Screen
+       Guest User: Guest User
+       Guest Admin: Guest Admin
+       Posts List: Posts List
+       User List: User List
+       Post Count: Post Count
+       Favorite Count: Favorite Count
+       Name: Name
+       Content: Content
+       Attachment: Attachment
+       Registered Date: Registered Date
+       Adress Email: Adress Email
+       Tags: Tags
+       Download Post: Download Post
+       Are you sure to delete: Are you sure to delete
+       Registered By: Registered By
+       Comments List: List of comments (the content below is important)
+       Couldn't post: Ne peut être publié
+       Favorites Posts: Publications Favoris
+       Commented by: Commenté (e) par
+       Posts_admin: Posts_admin
+       Posts: Posts
+       Search by post name: Search by post name
+       Destroy_message: Do you really want to delete this
+       About: About Students Helper
+       Use_SH: How to use Students Helper
+       Help_to: Can Help to
+       Goal: It is a tool for learning and sharing knowledge in schools and universities
+       About1: Popularization of research work
+       About2: Appropriation of work already done in a specific area in order to avoid doing the same things
+       About3: Collect contributions and suggestions from specialists in order to better orient research work
+       About4: Share the exam tests, the courses (texts, images, videos etc ....) and scientific opinions
+       About5: Learn the concepts of courses from different media (texts, images, videos etc ...)
+       About6: Solving specific problems of pupils and students
+       About7: Limit the use of home tutors for students
+       About8: Establish contacts between learners (pupils, students) on the one hand and between students and teachers on the other hand
+       About9: Facilitate the collection of exam tests and any other didactic support by pupils and learners
+       Use_SH1: Sign up to complete the registration form. Do not forget to mention his status (Pupil, Student or Teacher)
+       Use_SH2: For registration, Email and Password can't be blank
+       Use_SH3: Login with the correct information
+       Use_SH4: New Post for a new publication with a title, content and possibility of associating any type of file (PDF, Word, Excel, Photo, video etc ...)
+       Use_SH5: Post List allows you to access all published posts
+       Use_SH6: Show allows you to see the details of a post
+       Use_SH7: On the post details page, you can choose as favorites, comment on the post and have access to other users' comments
+       Use_SH8: User List allows you to see the list of all users in order to facilitate exchanges
+       Use_SH9: Admin Screen is only accessible to administrator users and allows you to manage all models
+       Use_SH10: The Back button allows you to go back or return to the list of posts     
+    buttons:
+      New Post: New Post
+      Show: Show
+      Edit: Modifier
+      Destroy: Destroy
+      Back: Back
+      Update: Update
+      Remove favorite: Remove favorite
+      Favorite: Favorite
+      Favorites Posts: Favorites Posts
+      Edit comment: Edit comment
+      Delete comment: Delete comment
+      Update Comment: Update Comment
+      Forgot your password: Forgot your password
+    form:
+      search: search     

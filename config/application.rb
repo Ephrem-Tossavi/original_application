@@ -9,6 +9,7 @@ Bundler.require(*Rails.groups)
 module OriginalApplication
   class Application < Rails::Application
     config.load_defaults 5.2
+    I18n.config.available_locales = :fr
 
     config.generators do |g|
       g.test_framework :rspec,

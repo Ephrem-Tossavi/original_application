@@ -7,9 +7,9 @@
 <br />
 
 <% if current_user.try(:admin?) %> 
- <h1>Posts_admin</h1> 
+ <h1><%=I18n.t('views.messages.Posts_admin')%></h1> 
  <% else %> 
- <h1>Posts</h1> 
+ <h1><%=I18n.t('views.messages.Posts')%></h1> 
  <% end %> 
 
 <div class="row py-3">
@@ -20,10 +20,10 @@
       <% if defined? @search_title %>
       <%= f.text_field :search_title, value: @search_title ,class:'tag mx-3',style:'height:50px;width:200px'%>
       <% else %>
-        <%= f.text_field :search_title, placeholder: "Search by post name"%>
+        <%= f.text_field :search_title, placeholder: I18n.t('views.messages.Search by post name')%>
       <% end %>
       <%= f.select :search_tag, @tags.collect { |p| [p.name, p.id]}, class: "search_tag", prompt: 'Tag' %>
-      <%= f.submit 'search' ,class:'btn btn-light'%>
+      <%= f.submit I18n.t('views.form.search') ,class:'btn btn-light'%>
       <% end %>
     </div>
   </div>
@@ -32,7 +32,7 @@
 <br>
 <br>
 
-<%= link_to 'New Post', new_post_path, class: "btn btn-primary"%>
+<%= link_to I18n.t('views.buttons.New Post'), new_post_path, class: "btn btn-primary"%>
 
 <br>
 <br>
@@ -40,12 +40,12 @@
 <table class = "table table-bordered table-striped">
   <thead>
     <tr>
-      <th>Name</th>
-      <th>Content</th>
-      <th>Attachment</th>
-      <th>Registered Date</th>
-      <th>Tags</th>
-      <th>Registered By</th>
+      <th><%=I18n.t('views.messages.Name')%></th>
+      <th><%=I18n.t('views.messages.Content')%></th>
+      <th><%=I18n.t('views.messages.Attachment')%></th>
+      <th><%=I18n.t('views.messages.Registered Date')%></th>
+      <th><%=I18n.t('views.messages.Tags')%></th>
+      <th><%=I18n.t('views.messages.Registered By')%></th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -55,7 +55,7 @@
       <tr>
         <td class= "post_row"><%= markdown(post.name) %></td>
         <td><%= markdown(post.content) %></td>
-        <td><%= link_to "Download Post", post.attachment_url %></td>
+        <td><%= link_to I18n.t('views.messages.Download Post'), post.attachment_url %></td>
         <td><%= post.created_at %></td>
         <td>
           <%post.tags.all.each do |tag|%>
@@ -64,10 +64,10 @@
           <%end%>
         </td>
         <td><%= post.user.name %></td>
-        <td><%= link_to 'Show', post, class:"btn btn-primary" %></td>
+        <td><%= link_to I18n.t('views.buttons.Show'), post, class:"btn btn-primary" %></td>
         
-        <td><%= link_to 'Edit', edit_post_path(post), class:"btn btn-success" %></td>
-        <td><%= link_to 'Destroy', post, method: :delete, class: "btn btn-danger", data: { confirm: 'Are you sure to delete #{post.name}?' } %></td>
+        <td><%= link_to I18n.t('views.buttons.Edit'), edit_post_path(post), class:"btn btn-success" %></td>
+        <td><%= link_to I18n.t('views.buttons.Destroy'), post, method: :delete, class: "btn btn-danger", data: { confirm: 'Are you sure to delete ?' } %></td>
         
        
         

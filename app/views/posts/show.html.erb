@@ -3,18 +3,18 @@
   <div class="post-area">
   
 
-  <p> <strong>Name:</strong> <%= markdown(@post.name) %> </p>
-  <p> <strong>Content:</strong> <%= markdown(@post.content) %> </p>
+  <p> <strong><%=I18n.t('views.messages.Name')%>:</strong> <%= markdown(@post.name) %> </p>
+  <p> <strong><%=I18n.t('views.messages.Content')%>:</strong> <%= markdown(@post.content) %> </p>
   <p>
     <strong>Attachment:</strong>
     <%if @post.attachment.url%>
     <iframe src="<%= @post.attachment.url %>", toolbar=0" width="100%" height="400px"> </iframe>
     <%end%>
   </p>
-  <p> <strong>Registered Date:</strong> <%= @post.created_at %> </p>
+  <p> <strong><%=I18n.t('views.messages.Registered Date')%>:</strong> <%= @post.created_at %> </p>
   </div>
 
-  <h2>List of comments (the content below is important)</h2>
+  <h2><%=I18n.t('views.messages.Comments List')%></h2>
 
   <div id="comments_area">
     <%= render partial: 'comments/index', locals: { comments: @comments, post: @post } %>
@@ -24,15 +24,15 @@
 
   <br>
   <%if @post.user==current_user %>
-  <%= link_to 'Edit', edit_post_path(@post), class: 'btn btn-primary'%> |
+  <%= link_to I18n.t('views.buttons.Edit'), edit_post_path(@post), class: 'btn btn-primary'%> |
   <% end %>
-  <%= link_to 'Back', posts_path, class: 'btn btn-danger'%> |
+  <%= link_to I18n.t('views.buttons.Back'), posts_path, class: 'btn btn-danger'%> |
   
   <% unless @post.user_id == current_user.id %>
     <% if @favorite.present? %>
-      <%= link_to 'Remove favorite', favorite_path(id: @favorite.id), method: :delete, class: 'btn btn-danger' %>
+      <%= link_to I18n.t('views.buttons.Remove favorite'), favorite_path(id: @favorite.id), method: :delete, class: 'btn btn-danger' %>
     <% else %>
-      <%= link_to 'Favorite', favorites_path(post_id: @post.id), method: :post, class: 'btn btn-primary' %>
+      <%= link_to I18n.t('views.buttons.Favorite'), favorites_path(post_id: @post.id), method: :post, class: 'btn btn-primary' %>
     <% end %>
   <% end %>
 </div>

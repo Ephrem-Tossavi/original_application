@@ -216,3 +216,75 @@ fr:
       long: "%A %d %B %Y %Hh%M"
       short: "%d %b %Hh%M"
     pm: pm
+
+  views:
+    messages:
+       Profile: Profile
+       home: Accueil
+       Sign in: Connexion
+       Sign up: Inscription
+       Sign Out: Déconnexion
+       Log in: Connexion
+       Admin Screen: Administration
+       Guest User: Utilisateur Invité
+       Guest Admin: Administrateur Invité
+       Posts List: Publications
+       Users List: Utilisateurs
+       Post Count: Nombre de publication
+       Favorite Count: Nombre de favoris
+       Name: Nom
+       Content: Contenu
+       Attachment: Fichier attaché
+       Adress Email: Adresse Email
+       Registered Date: Date d'enregistrement
+       Tags: Etiquettes
+       Download Post: Téléchargement fichier
+       Are you sure to delete: Etes vous sûr de vouloir supprimer
+       Registered By: Publiée par
+       Comments List: Liste des commentaires
+       Couldn't post: Ne peut être publié
+       Favorites Posts: Publications Favoris
+       Commented by: Commenté (e) par
+       Posts_admin: Publications Page Admin
+       Posts: Publications
+       Search by post name: Nom de la publication
+       Destroy_message: Etes vous sûr de vouloir supprimer ceci
+       About: 'A propos de Students Helper'
+       Use_SH: Comment utiliser Students Helper
+       Help_to: Peut aider à
+       Goal: Ceci est un outils d'apprentissage et de partage des connaissances dans les milieux scolaires et universitaires
+       About1: Vulagrisation des travaux de recherche
+       About2: Appropriation des travaux déjà réalisés dans un domaine spécifique afin d'éviter de faire les mêmes choses
+       About3: Recueillir les apports et suggestions des spécialistes afin de mieux orienter les travaux de recherche
+       About4: Partager les épreuves, les supports de de cours (textes, images, vidéos etc....) et des opinions scientifiques 
+       About5: Apprendre des notions de cours à partir de supports différents (textes, images, vidéos etc...)
+       About6: Résolution des problèmes spécifiques des élèves et étudiants
+       About7: Limiter le recours aux répétiteurs pour les apprenants
+       About8: Etablir des contacts entre apprenants (élèves, étudiants) d'une part et entre apprentants et enseignants d'autre part
+       About9: Faciliter la collecte d'épreuve et de tout autre support didactique par les élève et apprenant
+       Use_SH1: Inscription pour remplir le formulaire. Ne pas oublier de mentionner son status (Elève, Etudiant ou Enseignant)
+       Use_SH2: Lors de l'enregistrement, l"Email et le Mot de passe doivent être renseigné
+       Use_SH3: Connexion avec les informations correctes
+       Use_SH4: Nouvelle Publication pour publier un article avec titre, un contenu et la possibilité d'assossier un fichier (PDF, Word, Excel, Photo, video etc ...)"
+       Use_SH5: Publications pour accéder à la liste des publications
+       Use_SH6: Détail pour voir les détails de la publication
+       Use_SH7: Sur la page de détails d'une publication, vous pouvez choisir comme favori, commenter et avoir accès aux commentaires des autres utilisateurs"
+       Use_SH8: Utilisateurs vous permet de voir la liste de tous utilisateurs afin de faciliter les échanges"
+       Use_SH9: Administration est accessible seulement aux administrateurs et permet la gestion de tous les modèles"
+       Use_SH10: Le boutton "Back" permet à chaque fois un retour vers la page précédente ou sur la page de la liste des publications     
+    buttons:
+      New Post: Nouvelle Publication
+      Show: Détail
+      Edit: Modifier
+      Destroy: Supprimer
+      Back: Retour
+      Update: Mettre à jour
+      Remove favorite: Supprimer favori
+      Favorite: Favoris
+      Favorites Posts: Publications favoris
+      Edit comment: Modifier ce commentaire
+      Delete comment: Supprimer ce commentaire
+      Update Comment: Mettre à jour ce commentaire
+      Forgot your password:
+    form:
+      search: Rechercher 
