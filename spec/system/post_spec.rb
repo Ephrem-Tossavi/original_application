@@ -6,9 +6,9 @@ RSpec.describe 'Fonction de gestion des posts', type: :system do
 
     visit new_user_session_path
 
-    fill_in 'Email', with: user.email
-    fill_in 'Password', with: user.password
-    click_button 'Log in'
+    fill_in "user[email]", with: user.email
+    fill_in "user[password]", with: user.password
+    click_button I18n.t('views.messages.Log in')
 
     user= User.last
 
@@ -69,7 +69,7 @@ RSpec.describe 'Fonction de gestion des posts', type: :system do
         it "Retourner une liste avec recherche d'étiquette " do
           visit posts_path
           select "Biologie", from: "search_tag"
-          click_on "search"
+          click_on I18n.t('views.form.search')
           expect(page).to have_content 'Biologie' 
         end
     end
@@ -78,8 +78,8 @@ RSpec.describe 'Fonction de gestion des posts', type: :system do
     context "Choisir un post comme favoris" do
       it "Ne peut mettre sa propre publication comme favoris" do
         visit posts_path
-        click_on "Show"
-        expect(page).to have_no_content 'Favorite'
+        click_on I18n.t('views.buttons.Show')
+        expect(page).to have_no_content I18n.t('views.buttons.Favorite')
         
       end 
     end 
