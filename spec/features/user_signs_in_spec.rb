@@ -8,10 +8,10 @@ RSpec.feature 'User signs in' do
 
     fill_in 'Email', with: user.email
     fill_in 'Password', with: user.password
-    click_button 'Log in'
+    click_button I18n.t('views.messages.Log in')
 
     expect(page).to have_text 'Signed in successfully.'
-    expect(page).to have_link 'Sign Out'
+    expect(page).to have_link I18n.t('views.messages.Sign Out')
     expect(page).to have_current_path root_path
   end
 
@@ -22,9 +22,9 @@ RSpec.feature 'User signs in' do
 
     fill_in 'Email', with: user.email
     fill_in 'Password', with: user.password
-    click_button 'Log in'
+    click_button I18n.t('views.messages.Log in')
 
     expect(page).to have_text 'Invalid Email or password.'
-    expect(page).to have_no_link 'Sign Out'
+    expect(page).to have_no_link I18n.t('views.messages.Sign Out')
   end
 end

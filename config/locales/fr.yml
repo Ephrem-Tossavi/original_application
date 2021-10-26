@@ -225,6 +225,7 @@ fr:
        Sign up: Inscription
        Sign Out: Déconnexion
        Log in: Connexion
+       Forgot your password?: Mot de passe oublié?
        Admin Screen: Administration
        Guest User: Utilisateur Invité
        Guest Admin: Administrateur Invité
@@ -286,6 +287,5 @@ fr:
       Edit comment: Modifier ce commentaire
       Delete comment: Supprimer ce commentaire
       Update Comment: Mettre à jour ce commentaire
-      Forgot your password:
     form:
       search: Rechercher 

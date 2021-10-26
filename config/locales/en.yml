@@ -252,6 +252,7 @@ en:
        Sign up: Sign up
        Sign Out: Sign Out
        Log in: Log in
+       Forgot your password?: Forgot your password?
        Admin Screen: Admin Screen
        Guest User: Guest User
        Guest Admin: Guest Admin
@@ -313,6 +314,5 @@ en:
       Edit comment: Edit comment
       Delete comment: Delete comment
       Update Comment: Update Comment
-      Forgot your password: Forgot your password
     form:
       search: search     
