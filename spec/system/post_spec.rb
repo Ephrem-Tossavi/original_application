@@ -14,12 +14,9 @@ RSpec.describe 'Fonction de gestion des posts', type: :system do
 
     post = FactoryBot.create(:post, name: 'Diver', content: 'Liste des diplômés', attachment: 'Document', user_id: user.id)
 
-    #FactoryBot.create(:post)
-    #FactoryBot.create(:second_post)
-
     FactoryBot.create(:tag)
     FactoryBot.create(:tagging)
-    #FactoryBot.create(:favorite)
+
     end
   describe 'Nouvelle fonction de création' do
     context "Lors de la création d'un nouveau post" do
@@ -33,7 +30,6 @@ RSpec.describe 'Fonction de gestion des posts', type: :system do
   describe "Fonction d'affichage de liste" do
     context "Lors de la transition vers l'écran de liste" do
       it "Une liste des posts créées s'affiche" do
-        #post = FactoryBot.create(:post, name: 'Diver', content: 'Liste des diplômés', attachment: 'Document')
         visit posts_path
         expect(page).to have_content 'Diver'
       end
@@ -45,7 +41,6 @@ RSpec.describe 'Fonction de gestion des posts', type: :system do
         @post_list = all(".post_row")
         
         expect(@post_list[0]).to have_content 'Diver'
-        #expect(@post_list[-1]).to have_content 'titre1_factory'
       end
     end
   end

@@ -10,7 +10,7 @@ RSpec.feature 'User signs up' do
     fill_in "user[password_confirmation]", with: 'password'
     click_button I18n.t('views.messages.Sign up')
 
-    #expect(page).to have_text 'Welcome! You have signed up successfully.'
+    
     expect(page).to have_link I18n.t('views.messages.Sign Out')
     expect(page).to have_current_path root_path
   end
@@ -20,8 +20,6 @@ RSpec.feature 'User signs up' do
 
     click_button I18n.t('views.messages.Sign up')
 
-    #expect(page).to have_text "Email can't be blank"
-    #expect(page).to have_text "Password can't be blank"
     expect(page).to have_no_link I18n.t('views.messages.Sign Out')
   end
 end
