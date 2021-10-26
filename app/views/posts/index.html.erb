@@ -65,11 +65,14 @@
         </td>
         <td><%= post.user.name %></td>
         <td><%= link_to I18n.t('views.buttons.Show'), post, class:"btn btn-primary" %></td>
+
+        <%if post.user==current_user %>
         
         <td><%= link_to I18n.t('views.buttons.Edit'), edit_post_path(post), class:"btn btn-success" %></td>
         <td><%= link_to I18n.t('views.buttons.Destroy'), post, method: :delete, class: "btn btn-danger", data: { confirm: 'Are you sure to delete ?' } %></td>
-        
-       
+        <% else %>
+        <p></p>
+        <% end %>
         
       </tr>
     <% end %>

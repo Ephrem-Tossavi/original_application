@@ -17,10 +17,16 @@ RSpec.describe Post, type: :model do
         end
       end
     end
+    context "Lorsque l'utilisateur tente de créer un post dont le contenu est vide" do
+      it 'Revoyer le message: Contenu doit être rempli(e)' do
+        post = Post.new(content: nil)
+        expect(post).not_to be_valid
+      end
+    end
     describe 'Fonction de validation des posts décrites' do
-      context 'Si le nom du post est décrit' do
+      context 'Si le nom et le contenu du post sont décrits' do
         it 'Validation réussie' do
-          post = Post.new(name: "Diver Projet original")
+          post = Post.new(name: "Diver Projet original", content: "Students Helper")
           expect(post).to be_valid
         end
       end

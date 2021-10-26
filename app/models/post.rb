@@ -1,6 +1,7 @@
 class Post < ApplicationRecord
    mount_uploader :attachment, AttachmentUploader
    validates :name, presence: true
+   validates :content, presence: true
 
    belongs_to :user, optional: true
    has_many :taggings, dependent: :destroy

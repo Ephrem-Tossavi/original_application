@@ -7,9 +7,9 @@
     
   <% end %>
 
-  <div class="field">
+  <div class="field form-group">
     <%= form.label :Nom %>
-    <%= form.text_field :name, class: "input" %>
+    <%= form.text_field :name, placeholder: "nom", class: "input form-control" %>
   </div>
   <% if name %>
         <div class="d-block" style="color:red;font-size:12px">
@@ -20,9 +20,9 @@
       <% end %>
   <br>
 
-  <div class="field">
+  <div class="field form-group">
     <%= form.label :Contenu %>
-    <%= form.text_area :content, class: "input h-64"%>
+    <%= form.text_area :content, placeholder: "contenu", class: "input form-control"%>
   </div>
   <% if content %>
         <div class="d-block" style="color:red;font-size:12px">
@@ -32,9 +32,9 @@
           <% end %>
 
 
-  <div class="field">
+  <div class="field form-group">
   <%= form.label :attachment %>
-  <%= form.file_field :attachment %>
+  <%= form.file_field :attachment, class: "input form-control"%>
  </div>
  <% if attachment %>
         <div class="d-block" style="color:red;font-size:12px">
@@ -45,25 +45,18 @@
 
  <h3><%=I18n.t('views.messages.Tags')%></h3>
 
-  <table style="width:100%">
-  
-    <thead>
-    <tr>
-    <th></th>
-    <th></th>
-    </tr>
-    </thead>
-  <tbody>
-  <% @tags.each do |tag| %>
-  <tr>
-  <td><%=form.label :tag_ids, tag.name,value:tag[:id],style:'text-decoration:none'%></td>  
-  <td><%= form.check_box :tag_ids, { multiple: true, checked: @post.tags.find_by(id: tag.id).present?,  disabled: tag[:disabled], include_hidden: false }, tag[:id] %></td>
-  </tr>
-  <% end %>
-  </tbody>
-</table>
+ <div class="container">
+            <div class="row">
+            <% @tags.each do |tag| %>
+                <div class="col col-sm-4">
+                <%=form.label :tag_ids, tag.name,value:tag[:id],style:'text-decoration:none'%>
+                <%= form.check_box :tag_ids, { multiple: true, checked: @post.tags.find_by(id: tag.id).present?,  disabled: tag[:disabled], include_hidden: false }, tag[:id] %>
+                </div>
+            <% end %>
+            </div>
+        </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit "créer", class: "btn btn-primary" %>
   </div>
 <% end %>

@@ -11,7 +11,7 @@
 
   <div class="field">
     <%= f.label :name %><br />
-    <%= f.text_field :name, autofocus: true, autocomplete: "name" %>
+    <%= f.text_field :name, placeholder: "nom", autofocus: true, autocomplete: "name" %>
   </div>
   <% if wrong_name %>
 						<div class="d-block" style="color:red;font-size:12px">
@@ -23,7 +23,7 @@
   
   <div class="field">
     <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    <%= f.email_field :email, placeholder: "email", autofocus: true, autocomplete: "email" %>
   </div>
   <% if wrong_email %>
 						<div class="d-block" style="color:red;font-size:12px;">
@@ -39,7 +39,7 @@
 
   <div class="field">
     <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
+    <%= f.password_field :password, placeholder: "mot de passe", autocomplete: "new-password" %>
     <% if @minimum_password_length %>
       <br />
       <em><%= @minimum_password_length %> characters minimum</em>
@@ -55,7 +55,7 @@
 
   <div class="field">
     <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+    <%= f.password_field :password_confirmation, placeholder: "confirmez mot de passe", autocomplete: "new-password" %>
   </div>
   <% if wrong_password_confirmation %>
 						<div class="d-block" style="color:red;font-size:12px;">

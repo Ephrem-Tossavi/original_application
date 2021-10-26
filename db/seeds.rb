@@ -7,7 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 user = User.create(name: "Ephrem TOSSAVI", email: "ephrem@gmail.com", password: "password", status: "Enseignant", admin: true)
-posts = Post.all
+#posts = Post.all
 
 posts.each do |post|
     post.update(user_id: User.last.id) 
