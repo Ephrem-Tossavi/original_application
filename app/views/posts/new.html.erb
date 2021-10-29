@@ -1,7 +1,76 @@
-<h1><%=I18n.t('views.buttons.New Post')%></h1>
+<div class="container">
+     <div class="row">
+         <div class="col-md-6">
+            <img src="https://blog.infotourisme.net/wp-content/uploads/2012/09/Institute-for-Scientific-Information-Russian-Academy-of-Sciences-Moscow.jpg" class="center-block", style="width: 550px; height: 550px">
+        </div>
+        <div class="col-md-6"> <h1><%=I18n.t('views.buttons.New Post')%></h1>
+        <%= form_with(model: @post, local: true) do |form| %>
+ 
+            <% if @post.errors.any? %>
+            <% name = post.errors.include?(:name) %>
+              <% content = post.errors.include?(:content) %>
+              <% attachment = post.errors.include?(:attachment) %>
+              
+            <% end %>
+          
+            <div class="field form-group">
+              <%= form.label :Nom %>
+              <%= form.text_field :name, placeholder: "nom", class: "input form-control" %>
+            </div>
+            <% if name %>
+                  <div class="d-block" style="color:red;font-size:12px">
+                    <% post.errors.full_messages_for(:name).each do |error_message| %>
+                      <%= error_message %>.
+                    <% end %>
+                  </div>
+                <% end %>
+            <br>
+          
+            <div class="field form-group">
+              <%= form.label :Contenu %>
+              <%= form.text_area :content, placeholder: "contenu", class: "input form-control"%>
+            </div>
+            <% if content %>
+                  <div class="d-block" style="color:red;font-size:12px">
+                    <% post.errors.full_messages_for(:content).each do |error_message| %>
+                      <%= error_message %>.
+                    <% end %>
+                    <% end %>
+          
+          
+            <div class="field form-group">
+            <%= form.label :attachment %>
+            <%= form.file_field :attachment, class: "input form-control"%>
+           </div>
+           <% if attachment %>
+                  <div class="d-block" style="color:red;font-size:12px">
+                    <% post.errors.full_messages_for(:attachment).each do |error_message| %>
+                      <%= error_message %>.
+                    <% end %>
+                    <% end %>
+          
+           <h3><%=I18n.t('views.messages.Tags')%></h3>
+          
+           <div class="container">
+                      <div class="row">
+                      <% @tags.each do |tag| %>
+                          <div class="col col-sm-5">
+                          <%=form.label :tag_ids, tag.name,value:tag[:id],style:'text-decoration:none'%>
+                          <%= form.check_box :tag_ids, { multiple: true, checked: @post.tags.find_by(id: tag.id).present?,  disabled: tag[:disabled], include_hidden: false }, tag[:id] %>
+                          </div>
+                      <% end %>
+                      </div>
+                  </div>
+          
+            <div class="actions">
+              <%= form.submit %>
+            </div>
+            <br>
+          <% end %>
+          <%= link_to I18n.t('views.buttons.Back'), posts_path, class: "btn btn-danger text-light" %>
+        </div>
+    </div>    
+</div>
 
-<%= render 'form', post: @post %>
-
-<%= link_to I18n.t('views.buttons.Back'), posts_path %>
 
 <%= render 'posts/footer'%>
